@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       for (let i = 0; i < 5; i++) estrellas += i < entero ? "★" : "☆";
 
      estrellasDiv.innerHTML = `
-      <div style="font-size:1.6rem; color:#f8c200; margin-bottom:6px;">
+      <div style="font-size:2rem; color:#f8c200; margin-bottom:6px;">
         ${estrellas}
       </div>
     
@@ -89,4 +89,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
 });
+
 
