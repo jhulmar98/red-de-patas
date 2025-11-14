@@ -3,65 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Credencial | Red de Patas</title>
+  <title>Red de Patas</title>
 
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Mensaje principal */
+    .inicio {
+      max-width: 600px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      background: #ffffffcc;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      backdrop-filter: blur(7px);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #c0392b;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 12px;
+    }
+
+    .logo-inicio {
+      width: 140px;
+      margin-bottom: 25px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="credencial">
 
-    <!-- LOGO -->
-    <header class="header">
-      <img src="logo.png" alt="Logo Red de Patas" class="logo" />
-    </header>
+  <div class="inicio">
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="contenido">
+    <img src="logo.png" alt="Red de Patas" class="logo-inicio" />
 
-      <!-- FOTO -->
-      <div class="foto">
-        <img id="foto" src="https://placehold.co/150x170" alt="Foto del Paseador" />
+    <h1>Red de Patas</h1>
+    <h3>Sistema de verificación y calificación</h3>
 
-      </div>
-
-      <!-- BLOQUE DE DATOS -->
-      <div class="datos">
-
-        <div class="dato-linea">
-          <strong>NOMBRE:</strong> <span id="nombre">—</span>
-        </div>
-
-        <div class="dato-linea">
-          <!-- ⛔ Esta línea necesita guardar el código del paseador -->
-          <!-- lo haremos con data-codigo -->
-          <strong>DNI:</strong> 
-          <span id="dni" data-codigo="">—</span>
-        </div>
-
-        <div class="dato-linea">
-          <strong>CEL.:</strong> <span id="telefono">—</span>
-        </div>
-
-        <!-- CALIFICACIÓN -->
-        <div class="bloque-calificacion">
-          <div id="estrellas" class="estrellas">★★★★★</div>
-
-          <div class="acciones-feedback">
-            <button id="btnCalificar">Calificar</button>
-            <button id="btnComentarios">Comentarios</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
+    <p>
+      Bienvenido al sistema.  
+      <br><br>
+      👉 <strong>Si vienes desde un QR</strong>, verás automáticamente la credencial correspondiente.
+      <br><br>
+      👉 <strong>Si ingresaste directamente</strong>, significa que el sitio está funcionando correctamente.
+    </p>
 
   </div>
 
-  <!-- JS PRINCIPAL -->
-  <script type="module" src="js/credencial.js"></script>
-
-
+  <!-- Este script solo está aquí para NO ejecutar la lógica QR -->
+  <script>
+    console.log("Index cargado: acceso normal sin QR.");
+  </script>
 
 </body>
 </html>
