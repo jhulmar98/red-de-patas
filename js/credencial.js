@@ -62,10 +62,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       for (let i = 0; i < 5; i++) estrellas += i < entero ? "★" : "☆";
 
-      estrellasDiv.innerHTML = `
-        <div style="font-size:2rem;color:#f8c200;">${estrellas}</div>
-        <div>${datosCal.promedio} - ${datosCal.votos} votos</div>
-      `;
+     estrellasDiv.innerHTML = `
+      <div style="font-size:1.6rem; color:#f8c200; margin-bottom:6px;">
+        ${estrellas}
+      </div>
+    
+      <div style="font-size:1.2rem; font-weight:600; color:#444;">
+        ${datosCal.promedio} <span style="color:#999;">–</span> ${datosCal.votos} votos
+      </div>
+    `;
+
     }
 
   } catch (err) {
@@ -83,3 +89,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
 });
+
