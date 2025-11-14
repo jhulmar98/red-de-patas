@@ -65,10 +65,20 @@
 
   </div>
 
-  <!-- Este script solo está aquí para NO ejecutar la lógica QR -->
+  <!-- 🔥 LÓGICA: Detectar si viene con QR -->
   <script>
-    console.log("Index cargado: acceso normal sin QR.");
+    // Detectar hash en la URL (significa que viene desde QR)
+    const hash = window.location.hash;
+
+    if (hash && hash.length > 1) {
+      console.log("Detectado QR → Redirigiendo a credenciales.html");
+      // Redirigir con el mismo hash
+      window.location.href = "credenciales.html" + hash;
+    } else {
+      console.log("Index cargado: acceso normal sin QR.");
+    }
   </script>
 
 </body>
 </html>
+
