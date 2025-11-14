@@ -1,15 +1,31 @@
 // js/credencial.js
-
 document.addEventListener("DOMContentLoaded", async () => {
 
+  // ===============================
+  // 1. LEER HASH DEL QR
+  // ===============================
   let hash = window.location.hash.substring(1);
+
+  // Si NO hay hash → es acceso normal (index)
+  if (!hash) {
+    console.log("Acceso normal sin QR → mostrar página principal");
+    return;
+  }
+
+  // Extraer el código del hash
   let codigo = hash.split("|")[0];
 
   if (!codigo) {
     alert("QR inválido");
+    window.location.href = "index.html";
     return;
   }
 
+  console.log("Código detectado por QR:", codigo);
+
+  // ===============================
+  // 2. URLs del backend
+  // ===============================
   const backendURLVerificar =
     "https://red-de-patas-api-812893065625.us-central1.run.app/api/verificar";
 
@@ -17,27 +33,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     "https://red-de-patas-api-812893065625.us-central1.run.app/api/promedio";
 
   try {
-    // =========================================================
-    // 1) CARGAR DATOS DEL PASEADOR
-    // =========================================================
+
+    // ===============================
+    // 3. VERIFICAR CREDENCIAL EN FIREBASE
+    // ===============================
     const resp = await fetch(`${backendURLVerificar}/${codigo}`);
     const data = await resp.json();
 
     if (!data.ok) {
-      alert("❌ Esta credencial NO está registrada.");
+      alert("❌ Esta credencial NO está registrada en Red de Patas.");
+      window.location.href = "index.html";
       return;
     }
 
+    // Mostrar datos
     document.getElementById("nombre").textContent = data.nombre || "—";
     document.getElementById("dni").textContent = data.dni || "—";
     document.getElementById("telefono").textContent = data.telefono || "—";
-
     document.getElementById("foto").src =
       data.foto || "https://placehold.co/150x170";
 
-    // =========================================================
-    // 2) CARGAR PROMEDIO DE CALIFICACIONES
-    // =========================================================
+    // ===============================
+    // 4. CARGAR PROMEDIO DE ESTRELLAS
+    // ===============================
     const resp2 = await fetch(`${backendURLPromedio}/${codigo}`);
     const datosCal = await resp2.json();
 
@@ -71,16 +89,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert("⚠️ Error conectando con el servidor.");
   }
 
-  // =========================================================
-  // 🔵 BOTÓN "CALIFICAR"
-  // =========================================================
+  // ===============================
+  // 5. BOTONES
+  // ===============================
   document.getElementById("btnCalificar").addEventListener("click", () => {
     window.location.href = `calificar.html?codigo=${codigo}`;
   });
 
-  // =========================================================
-  // 🔵 BOTÓN "VER COMENTARIOS"
-  // =========================================================
   document.getElementById("btnComentarios").addEventListener("click", () => {
     window.location.href = `comentarios.html?codigo=${codigo}`;
   });
