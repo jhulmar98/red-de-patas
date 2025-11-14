@@ -1,0 +1,225 @@
+/* ============================================================
+   FONDO GENERAL
+   ============================================================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e8edf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ============================================================
+   TARJETA FOTOCHECK
+   ============================================================ */
+.credencial {
+  width: 92vw;
+  max-width: 360px;
+  height: 75vh;
+  background: white;
+
+  border-radius: 18px;        
+  border: 2px solid #d4d4d4;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+header {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
+.contenido {
+  flex-grow: 1;
+  border-top: 3px solid #d3a978;
+  padding-top: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================================
+   FOTO
+   ============================================================ */
+.foto {
+  width: 150px;
+  height: 170px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   DATOS
+   ============================================================ */
+.datos {
+  width: 85%;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dato-linea {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+
+  margin: 8px 0;
+  letter-spacing: 0.3px;
+}
+
+.dato-linea strong {
+  color: #002b5c;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   CALIFICACIÓN
+   ============================================================ */
+.bloque-calificacion {
+  margin-top: 15px;       /* ⭐ Subimos las estrellas */
+}
+
+.estrellas {
+  font-size: 3rem;     /* ⭐ Tamaño ideal */
+  color: #f8c200;        /* Amarillo */
+  letter-spacing: 6px;   /* ⭐ Separación elegante */
+}
+
+/* ============================================================
+   BOTONES DE FEEDBACK
+   ============================================================ */
+/* ============================================================
+   BOTONES DE FEEDBACK — NUEVA VERSIÓN
+   ============================================================ */
+.acciones-feedback {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.acciones-feedback button {
+  width: 48%;                 /* Ocupan casi toda la credencial */
+  padding: 14px 0;            /* Más altos */
+  border: none;
+  background: #0b2545;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.1rem;          /* Texto más grande */
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: 0.15s ease-in-out;
+  letter-spacing: 0.5px;
+}
+
+.acciones-feedback button:hover {
+  background: #123a6f;
+  transform: scale(1.04);
+}
+
+.acciones-feedback button:active {
+  transform: scale(0.97);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  text-align: center;
+  padding: 8px 0 12px 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+footer a {
+  color: #0b2545;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* ===========================================
+   FORMULARIO DE CALIFICACIÓN
+   =========================================== */
+.calificar-container {
+  width: 92vw;
+  max-width: 360px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.calificar-container input,
+.calificar-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.calificacion-estrellas {
+  font-size: 2.5rem;
+  color: gold;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.btn-primary {
+  background: #0b2545;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1.1rem;
+  border: none;
+  margin-top: 10px;
+}
+
+.btn-secundario {
+  background: #6b7280;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  margin-top: 10px;
+}
